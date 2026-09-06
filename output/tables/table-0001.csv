@@ -1,0 +1,4 @@
+Class,Train Set,Validation Set,Test Set
+Forest Fire,642,107,190
+No Forest Fire,658,113,190
+Total,1300,220,380

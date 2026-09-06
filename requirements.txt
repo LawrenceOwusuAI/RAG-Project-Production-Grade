@@ -1,0 +1,17 @@
+docling 
+pillow 
+transformers 
+langchain-core
+langchain
+langchain_community
+langchain-docling
+easyocr
+pytesseract
+langchain-pinecone
+langchain-huggingface
+sentence-transformers
+pinecone
+python-dotenv
+langchain-openai
+langchain-community
+langchain-classic
