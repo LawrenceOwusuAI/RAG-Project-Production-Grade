@@ -317,4 +317,6 @@ def run_chunking_pipeline() -> list[Document]:
 
     print(f"\nRAG chunks created: "f"{len(langchain_documents)}")
     return langchain_documents
-run_chunking_pipeline()
+
+if __name__ == "__main__":
+    run_chunking_pipeline()

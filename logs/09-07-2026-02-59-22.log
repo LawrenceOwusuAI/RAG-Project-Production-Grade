@@ -1,0 +1,103 @@
+[ 2026-09-07 02:59:33,992 ] 153 root - INFO - RAG retrieval pipeline started
+[ 2026-09-07 02:59:33,993 ] 23 root - INFO - Pinecone API key loaded successfully
+[ 2026-09-07 02:59:33,993 ] 28 root - INFO - OpenAI API key loaded successfully
+[ 2026-09-07 02:59:33,993 ] 30 root - INFO - Loading embedding model
+[ 2026-09-07 02:59:34,129 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,150 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,203 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,222 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,224 ] 1080 sentence_transformers.base.model - INFO - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+[ 2026-09-07 02:59:34,266 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,303 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,352 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,353 ] 965 huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ 2026-09-07 02:59:34,371 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,493 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,515 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,563 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,584 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,630 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:34,679 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:34,700 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:34,890 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:34,936 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:34,979 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:35,024 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:35,074 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:35,098 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,147 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:35,169 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,216 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:35,237 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,283 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:35,303 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,363 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:35,416 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,488 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:35,506 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,553 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:35,598 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:35,606 ] 36 root - INFO - Embedding model loaded successfully
+[ 2026-09-07 02:59:35,607 ] 37 root - INFO - Connecting to Pinecone
+[ 2026-09-07 02:59:35,856 ] 40 root - INFO - Connected to Pinecone index: rag-project
+[ 2026-09-07 02:59:36,090 ] 42 root - INFO - Pinecone index statistics: {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'metric': 'cosine',
+ 'namespaces': {'wildfire_paper': {'vector_count': 73}},
+ 'total_vector_count': 73,
+ 'vector_type': 'dense'}
+[ 2026-09-07 02:59:36,090 ] 44 root - INFO - Connected LangChain to Pinecone vector store
+[ 2026-09-07 02:59:36,091 ] 45 root - INFO - Creating advanced retriever
+[ 2026-09-07 02:59:36,091 ] 297 root - INFO - Creating advanced retrieval pipeline
+[ 2026-09-07 02:59:36,091 ] 205 root - INFO - Creating Pinecone base retriever
+[ 2026-09-07 02:59:36,091 ] 44 root - INFO - Creating query transformation model
+[ 2026-09-07 02:59:36,761 ] 291 root - INFO - Creating cross-encoder reranker
+[ 2026-09-07 02:59:36,761 ] 283 root - INFO - Loading cross-encoder model: BAAI/bge-reranker-base
+[ 2026-09-07 02:59:36,806 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:36,806 ] 1069 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-09-07 02:59:36,850 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:36,891 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:36,925 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:36,987 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:37,030 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:37,048 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:37,203 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:37,256 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:37,305 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:37,356 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:37,399 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:37,419 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:37,468 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:37,487 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:37,543 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:37,563 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:37,615 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-07 02:59:37,639 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:37,699 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-07 02:59:37,751 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:39,640 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:39,657 ] 311 root - INFO - Advanced retriever created successfully
+[ 2026-09-07 02:59:39,657 ] 47 root - INFO - Advanced retriever created successfully
+[ 2026-09-07 02:59:57,262 ] 49 root - INFO - Retrieval started for query: summarize the main findings of the research
+[ 2026-09-07 02:59:57,269 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-07 02:59:57,269 ] 200 root - INFO - Transforming user query
+[ 2026-09-07 02:59:58,635 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-07 02:59:58,654 ] 256 root - INFO - Original query: summarize the main findings of the research
+[ 2026-09-07 02:59:58,654 ] 257 root - INFO - Rewritten query: Summarize the main findings of the research study
+[ 2026-09-07 02:59:58,654 ] 258 root - INFO - Expanded queries: ['Summary of key research findings', 'Main conclusions of the research study', 'Overview of research study results', 'Principal outcomes of the research']
+[ 2026-09-07 02:59:58,654 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-07 02:59:58,654 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-07 02:59:58,654 ] 274 root - INFO - Searching Pinecone with query: summarize the main findings of the research
+[ 2026-09-07 02:59:58,726 ] 274 root - INFO - Searching Pinecone with query: Summarize the main findings of the research study
+[ 2026-09-07 02:59:58,807 ] 274 root - INFO - Searching Pinecone with query: Summary of key research findings
+[ 2026-09-07 02:59:58,896 ] 274 root - INFO - Searching Pinecone with query: Main conclusions of the research study
+[ 2026-09-07 02:59:58,932 ] 274 root - INFO - Searching Pinecone with query: Overview of research study results
+[ 2026-09-07 02:59:59,018 ] 274 root - INFO - Searching Pinecone with query: Principal outcomes of the research
+[ 2026-09-07 02:59:59,142 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-07 02:59:59,142 ] 250 root - INFO - Documents after RRF ranking: 4
+[ 2026-09-07 02:59:59,142 ] 279 root - INFO - Documents sent to cross encoder: 4
+[ 2026-09-07 03:00:00,184 ] 51 root - INFO - Retrieval and reranking completed. Final documents retrieved: 2
+[ 2026-09-07 03:00:00,185 ] 146 root - INFO - Generating final answer from retrieved context
+[ 2026-09-07 03:00:02,215 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-07 03:00:02,218 ] 148 root - INFO - Final answer generated successfully
+[ 2026-09-07 03:00:02,220 ] 159 root - INFO - RAG retrieval pipeline completed successfully
