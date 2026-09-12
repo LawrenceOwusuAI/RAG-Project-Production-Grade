@@ -14,11 +14,11 @@ from exception import CustomException
 QUERY_MODEL = "gpt-4.1-mini"
 CROSS_ENCODER_MODEL = "BAAI/bge-reranker-base"
 #Number of chunks Pinecone returns for EACH transformed query
-BASE_K = 5
+BASE_K = 64
 # Maximum number of documents sent to the cross encoder
 MAX_CANDIDATES = 20
 # Final number of chunks returned after cross-encoder reranking
-FINAL_TOP_N = 5
+FINAL_TOP_N = 4
 # Reciprocal Rank Fusion constant
 RRF_K = 60
 
@@ -284,7 +284,8 @@ def create_cross_encoder():
     cross_encoder = HuggingFaceCrossEncoder(
             model_name=CROSS_ENCODER_MODEL,
             model_kwargs={
-                "device": "cpu"})
+                "device": "cpu"   
+            })
     return cross_encoder
 
 def create_cross_encoder_reranker():

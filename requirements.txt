@@ -15,3 +15,7 @@ python-dotenv
 langchain-openai
 langchain-community
 langchain-classic
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic

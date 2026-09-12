@@ -1,0 +1,316 @@
+[ 2026-09-11 19:51:56,770 ] 103 root - INFO - FastAPI RAG application startup started
+[ 2026-09-11 19:51:56,771 ] 108 root - INFO - Pinecone API key loaded successfully
+[ 2026-09-11 19:51:56,771 ] 113 root - INFO - OpenAI API key loaded successfully
+[ 2026-09-11 19:51:56,771 ] 115 root - INFO - Loading embedding model
+[ 2026-09-11 19:51:56,894 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:56,895 ] 965 huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ 2026-09-11 19:51:56,924 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:56,960 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:56,980 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:56,981 ] 1080 sentence_transformers.base.model - INFO - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+[ 2026-09-11 19:51:57,015 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:57,037 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:57,078 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:57,099 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:57,137 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:57,157 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:57,196 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:57,217 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:57,258 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:57,296 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:57,317 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:57,752 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:57,797 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:57,836 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:57,889 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:57,926 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:57,947 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:57,990 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:58,010 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:58,054 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:58,075 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:58,114 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:58,135 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:58,183 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:58,222 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:58,314 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:58,333 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:58,373 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:58,413 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:58,416 ] 121 root - INFO - Embedding model loaded successfully
+[ 2026-09-11 19:51:58,416 ] 123 root - INFO - Connecting to Pinecone
+[ 2026-09-11 19:51:58,646 ] 127 root - INFO - Connected to Pinecone index: rag-project
+[ 2026-09-11 19:51:58,812 ] 131 root - INFO - Pinecone index statistics: {'dimension': 384,
+ 'index_fullness': 0.0,
+ 'metric': 'cosine',
+ 'namespaces': {'wildfire_paper': {'vector_count': 73}},
+ 'total_vector_count': 73,
+ 'vector_type': 'dense'}
+[ 2026-09-11 19:51:58,812 ] 139 root - INFO - Connected LangChain to Pinecone vector store
+[ 2026-09-11 19:51:58,812 ] 141 root - INFO - Creating advanced retriever
+[ 2026-09-11 19:51:58,812 ] 298 root - INFO - Creating advanced retrieval pipeline
+[ 2026-09-11 19:51:58,812 ] 205 root - INFO - Creating Pinecone base retriever
+[ 2026-09-11 19:51:58,812 ] 44 root - INFO - Creating query transformation model
+[ 2026-09-11 19:51:59,382 ] 292 root - INFO - Creating cross-encoder reranker
+[ 2026-09-11 19:51:59,382 ] 283 root - INFO - Loading cross-encoder model: BAAI/bge-reranker-base
+[ 2026-09-11 19:51:59,420 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:59,423 ] 1069 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-09-11 19:51:59,459 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:59,502 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:59,524 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:59,576 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:59,655 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:51:59,690 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:51:59,711 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:51:59,771 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[ 2026-09-11 19:52:00,025 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/xet-read-token/2cfc18c9415c912f9d8155881c133215df768a70 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:38,623 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:38,658 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:38,695 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:38,731 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:38,768 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:52:38,789 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:38,821 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:38,864 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:52:38,886 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:38,924 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:52:38,945 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:38,993 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:52:39,015 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:39,069 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:39,110 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:39,154 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/sentencepiece.bpe.model "HTTP/1.1 302 Found"
+[ 2026-09-11 19:52:39,735 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+[ 2026-09-11 19:52:40,339 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:40,376 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-11 19:52:40,400 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/special_tokens_map.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fspecial_tokens_map.json=&etag=%2268171d1ff68b731a33d119708476692c094a466b%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:40,426 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/special_tokens_map.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fspecial_tokens_map.json=&etag=%2268171d1ff68b731a33d119708476692c094a466b%22 "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:40,474 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[ 2026-09-11 19:52:42,713 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-11 19:52:42,729 ] 312 root - INFO - Advanced retriever created successfully
+[ 2026-09-11 19:52:42,730 ] 145 root - INFO - Advanced retriever created successfully
+[ 2026-09-11 19:52:42,730 ] 147 root - INFO - Loading answer generation model
+[ 2026-09-11 19:52:42,731 ] 151 root - INFO - Answer generation model loaded successfully
+[ 2026-09-11 19:52:42,731 ] 167 root - INFO - FastAPI RAG application startup completed successfully
+[ 2026-09-11 20:02:14,039 ] 232 root - INFO - Retrieval started for query: why are government paying attention to wildfire
+[ 2026-09-11 20:02:14,061 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:02:14,061 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:02:16,659 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:02:16,713 ] 256 root - INFO - Original query: why are government paying attention to wildfire
+[ 2026-09-11 20:02:16,713 ] 257 root - INFO - Rewritten query: Why are governments focusing on wildfire management and prevention?
+[ 2026-09-11 20:02:16,713 ] 258 root - INFO - Expanded queries: ['Reasons for government attention to wildfires', 'Government policies on wildfire management', 'Why do governments prioritize wildfire prevention', 'Government response to wildfire risks and impacts']
+[ 2026-09-11 20:02:16,713 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:02:16,713 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:02:16,713 ] 274 root - INFO - Searching Pinecone with query: why are government paying attention to wildfire
+[ 2026-09-11 20:02:17,175 ] 274 root - INFO - Searching Pinecone with query: Why are governments focusing on wildfire management and prevention?
+[ 2026-09-11 20:02:17,421 ] 274 root - INFO - Searching Pinecone with query: Reasons for government attention to wildfires
+[ 2026-09-11 20:02:17,557 ] 274 root - INFO - Searching Pinecone with query: Government policies on wildfire management
+[ 2026-09-11 20:02:17,671 ] 274 root - INFO - Searching Pinecone with query: Why do governments prioritize wildfire prevention
+[ 2026-09-11 20:02:17,802 ] 274 root - INFO - Searching Pinecone with query: Government response to wildfire risks and impacts
+[ 2026-09-11 20:02:17,916 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:02:17,916 ] 250 root - INFO - Documents after RRF ranking: 8
+[ 2026-09-11 20:02:17,916 ] 279 root - INFO - Documents sent to cross encoder: 8
+[ 2026-09-11 20:02:19,488 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:02:19,488 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:02:21,218 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:02:21,231 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:06:18,750 ] 232 root - INFO - Retrieval started for query: summarize the findings of the study
+[ 2026-09-11 20:06:18,750 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:06:18,750 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:06:20,174 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:06:20,181 ] 256 root - INFO - Original query: summarize the findings of the study
+[ 2026-09-11 20:06:20,181 ] 257 root - INFO - Rewritten query: Summary of the study's findings
+[ 2026-09-11 20:06:20,181 ] 258 root - INFO - Expanded queries: ['Study findings summary', 'Overview of the research results', 'Key conclusions of the study', 'Summary of research outcomes']
+[ 2026-09-11 20:06:20,181 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:06:20,182 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:06:20,182 ] 274 root - INFO - Searching Pinecone with query: summarize the findings of the study
+[ 2026-09-11 20:06:20,424 ] 274 root - INFO - Searching Pinecone with query: Summary of the study's findings
+[ 2026-09-11 20:06:20,525 ] 274 root - INFO - Searching Pinecone with query: Study findings summary
+[ 2026-09-11 20:06:20,637 ] 274 root - INFO - Searching Pinecone with query: Overview of the research results
+[ 2026-09-11 20:06:20,782 ] 274 root - INFO - Searching Pinecone with query: Key conclusions of the study
+[ 2026-09-11 20:06:20,860 ] 274 root - INFO - Searching Pinecone with query: Summary of research outcomes
+[ 2026-09-11 20:06:20,964 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:06:20,964 ] 250 root - INFO - Documents after RRF ranking: 8
+[ 2026-09-11 20:06:20,964 ] 279 root - INFO - Documents sent to cross encoder: 8
+[ 2026-09-11 20:06:22,416 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:06:22,416 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:06:24,060 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:06:24,071 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:11:18,606 ] 232 root - INFO - Retrieval started for query: what is weighted ensemble deep learning models
+[ 2026-09-11 20:11:18,607 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:11:18,607 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:11:21,543 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:11:21,552 ] 256 root - INFO - Original query: what is weighted ensemble deep learning models
+[ 2026-09-11 20:11:21,552 ] 257 root - INFO - Rewritten query: What are weighted ensemble deep learning models?
+[ 2026-09-11 20:11:21,552 ] 258 root - INFO - Expanded queries: ['Definition of weighted ensemble deep learning models', 'Weighted ensemble methods in deep learning', 'Deep learning models using weighted ensemble techniques', 'Weighted ensemble approaches for deep neural networks']
+[ 2026-09-11 20:11:21,553 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:11:21,553 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:11:21,553 ] 274 root - INFO - Searching Pinecone with query: what is weighted ensemble deep learning models
+[ 2026-09-11 20:11:21,781 ] 274 root - INFO - Searching Pinecone with query: What are weighted ensemble deep learning models?
+[ 2026-09-11 20:11:21,875 ] 274 root - INFO - Searching Pinecone with query: Definition of weighted ensemble deep learning models
+[ 2026-09-11 20:11:22,046 ] 274 root - INFO - Searching Pinecone with query: Weighted ensemble methods in deep learning
+[ 2026-09-11 20:11:22,123 ] 274 root - INFO - Searching Pinecone with query: Deep learning models using weighted ensemble techniques
+[ 2026-09-11 20:11:22,219 ] 274 root - INFO - Searching Pinecone with query: Weighted ensemble approaches for deep neural networks
+[ 2026-09-11 20:11:22,316 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:11:22,316 ] 250 root - INFO - Documents after RRF ranking: 7
+[ 2026-09-11 20:11:22,316 ] 279 root - INFO - Documents sent to cross encoder: 7
+[ 2026-09-11 20:11:23,754 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:11:23,754 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:11:25,359 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:11:25,368 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:37:46,336 ] 232 root - INFO - Retrieval started for query: Describe the dataset used in the study
+[ 2026-09-11 20:37:46,336 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:37:46,336 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:37:48,522 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:37:48,531 ] 256 root - INFO - Original query: Describe the dataset used in the study
+[ 2026-09-11 20:37:48,531 ] 257 root - INFO - Rewritten query: Description of the dataset used in the study
+[ 2026-09-11 20:37:48,531 ] 258 root - INFO - Expanded queries: ['Details of the dataset utilized in the research study', 'Characteristics of the dataset employed in the study', 'Information about the data collection used in the study', 'Dataset description in the research paper']
+[ 2026-09-11 20:37:48,531 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:37:48,532 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:37:48,532 ] 274 root - INFO - Searching Pinecone with query: Describe the dataset used in the study
+[ 2026-09-11 20:37:48,796 ] 274 root - INFO - Searching Pinecone with query: Description of the dataset used in the study
+[ 2026-09-11 20:37:48,941 ] 274 root - INFO - Searching Pinecone with query: Details of the dataset utilized in the research study
+[ 2026-09-11 20:37:49,030 ] 274 root - INFO - Searching Pinecone with query: Characteristics of the dataset employed in the study
+[ 2026-09-11 20:37:49,154 ] 274 root - INFO - Searching Pinecone with query: Information about the data collection used in the study
+[ 2026-09-11 20:37:49,250 ] 274 root - INFO - Searching Pinecone with query: Dataset description in the research paper
+[ 2026-09-11 20:37:49,388 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:37:49,388 ] 250 root - INFO - Documents after RRF ranking: 9
+[ 2026-09-11 20:37:49,388 ] 279 root - INFO - Documents sent to cross encoder: 9
+[ 2026-09-11 20:37:51,007 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:37:51,008 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:37:52,314 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:37:52,342 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:41:16,184 ] 232 root - INFO - Retrieval started for query: Describe the dataset used in the study
+[ 2026-09-11 20:41:16,184 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:41:16,184 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:41:17,353 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:41:17,363 ] 256 root - INFO - Original query: Describe the dataset used in the study
+[ 2026-09-11 20:41:17,363 ] 257 root - INFO - Rewritten query: Description of the dataset used in the study
+[ 2026-09-11 20:41:17,363 ] 258 root - INFO - Expanded queries: ['Details of the dataset utilized in the research', 'Dataset characteristics in the study', 'Information about the data used in the study', 'Study dataset description']
+[ 2026-09-11 20:41:17,363 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:41:17,364 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:41:17,364 ] 274 root - INFO - Searching Pinecone with query: Describe the dataset used in the study
+[ 2026-09-11 20:41:17,572 ] 274 root - INFO - Searching Pinecone with query: Description of the dataset used in the study
+[ 2026-09-11 20:41:17,699 ] 274 root - INFO - Searching Pinecone with query: Details of the dataset utilized in the research
+[ 2026-09-11 20:41:17,781 ] 274 root - INFO - Searching Pinecone with query: Dataset characteristics in the study
+[ 2026-09-11 20:41:17,935 ] 274 root - INFO - Searching Pinecone with query: Information about the data used in the study
+[ 2026-09-11 20:41:18,023 ] 274 root - INFO - Searching Pinecone with query: Study dataset description
+[ 2026-09-11 20:41:18,104 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:41:18,104 ] 250 root - INFO - Documents after RRF ranking: 8
+[ 2026-09-11 20:41:18,104 ] 279 root - INFO - Documents sent to cross encoder: 8
+[ 2026-09-11 20:41:19,797 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:41:19,797 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:41:22,304 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:41:22,312 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:43:01,489 ] 232 root - INFO - Retrieval started for query: why is the deep learning based wildfire detection increasing
+[ 2026-09-11 20:43:01,489 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:43:01,490 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:43:02,799 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:43:02,807 ] 256 root - INFO - Original query: why is the deep learning based wildfire detection increasing
+[ 2026-09-11 20:43:02,807 ] 257 root - INFO - Rewritten query: What factors are contributing to the increase in deep learning-based wildfire detection?
+[ 2026-09-11 20:43:02,807 ] 258 root - INFO - Expanded queries: ['reasons for growth in deep learning wildfire detection', 'causes of increased use of deep learning for wildfire detection', 'factors driving the rise of deep learning wildfire detection systems', 'why is wildfire detection using deep learning becoming more prevalent']
+[ 2026-09-11 20:43:02,807 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:43:02,807 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:43:02,807 ] 274 root - INFO - Searching Pinecone with query: why is the deep learning based wildfire detection increasing
+[ 2026-09-11 20:43:03,006 ] 274 root - INFO - Searching Pinecone with query: What factors are contributing to the increase in deep learning-based wildfire detection?
+[ 2026-09-11 20:43:03,102 ] 274 root - INFO - Searching Pinecone with query: reasons for growth in deep learning wildfire detection
+[ 2026-09-11 20:43:03,226 ] 274 root - INFO - Searching Pinecone with query: causes of increased use of deep learning for wildfire detection
+[ 2026-09-11 20:43:03,292 ] 274 root - INFO - Searching Pinecone with query: factors driving the rise of deep learning wildfire detection systems
+[ 2026-09-11 20:43:03,393 ] 274 root - INFO - Searching Pinecone with query: why is wildfire detection using deep learning becoming more prevalent
+[ 2026-09-11 20:43:03,506 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:43:03,506 ] 250 root - INFO - Documents after RRF ranking: 6
+[ 2026-09-11 20:43:03,506 ] 279 root - INFO - Documents sent to cross encoder: 6
+[ 2026-09-11 20:43:04,588 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:43:04,588 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:43:06,718 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:43:06,725 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:45:59,629 ] 232 root - INFO - Retrieval started for query: how does the advancement in gpu affect wildfire detection
+[ 2026-09-11 20:45:59,629 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:45:59,629 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:46:01,013 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:46:01,017 ] 256 root - INFO - Original query: how does the advancement in gpu affect wildfire detection
+[ 2026-09-11 20:46:01,017 ] 257 root - INFO - Rewritten query: How do advancements in graphics processing units impact wildfire detection technologies?
+[ 2026-09-11 20:46:01,017 ] 258 root - INFO - Expanded queries: ['Impact of GPU advancements on wildfire detection systems', 'Effect of improved graphics processing units on wildfire monitoring', 'Role of advanced GPUs in wildfire detection and management', 'Influence of graphics processing unit technology progress on wildfire detection']
+[ 2026-09-11 20:46:01,017 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:46:01,017 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:46:01,017 ] 274 root - INFO - Searching Pinecone with query: how does the advancement in gpu affect wildfire detection
+[ 2026-09-11 20:46:01,259 ] 274 root - INFO - Searching Pinecone with query: How do advancements in graphics processing units impact wildfire detection technologies?
+[ 2026-09-11 20:46:01,395 ] 274 root - INFO - Searching Pinecone with query: Impact of GPU advancements on wildfire detection systems
+[ 2026-09-11 20:46:01,487 ] 274 root - INFO - Searching Pinecone with query: Effect of improved graphics processing units on wildfire monitoring
+[ 2026-09-11 20:46:01,554 ] 274 root - INFO - Searching Pinecone with query: Role of advanced GPUs in wildfire detection and management
+[ 2026-09-11 20:46:01,661 ] 274 root - INFO - Searching Pinecone with query: Influence of graphics processing unit technology progress on wildfire detection
+[ 2026-09-11 20:46:01,771 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:46:01,772 ] 250 root - INFO - Documents after RRF ranking: 9
+[ 2026-09-11 20:46:01,772 ] 279 root - INFO - Documents sent to cross encoder: 9
+[ 2026-09-11 20:46:03,218 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:46:03,218 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:46:04,698 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:46:04,706 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:48:44,000 ] 232 root - INFO - Retrieval started for query: how does the advancement in gpu facilitate wildfire detection
+[ 2026-09-11 20:48:44,001 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:48:44,001 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:48:44,966 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:48:44,976 ] 256 root - INFO - Original query: how does the advancement in gpu facilitate wildfire detection
+[ 2026-09-11 20:48:44,976 ] 257 root - INFO - Rewritten query: How do advancements in graphics processing units facilitate wildfire detection?
+[ 2026-09-11 20:48:44,976 ] 258 root - INFO - Expanded queries: ['Impact of GPU advancements on wildfire detection', 'Role of improved graphics processing units in wildfire monitoring', 'How enhanced GPUs contribute to wildfire detection technologies', 'Use of advanced GPU technology in detecting wildfires']
+[ 2026-09-11 20:48:44,976 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:48:44,976 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:48:44,976 ] 274 root - INFO - Searching Pinecone with query: how does the advancement in gpu facilitate wildfire detection
+[ 2026-09-11 20:48:45,206 ] 274 root - INFO - Searching Pinecone with query: How do advancements in graphics processing units facilitate wildfire detection?
+[ 2026-09-11 20:48:45,287 ] 274 root - INFO - Searching Pinecone with query: Impact of GPU advancements on wildfire detection
+[ 2026-09-11 20:48:45,397 ] 274 root - INFO - Searching Pinecone with query: Role of improved graphics processing units in wildfire monitoring
+[ 2026-09-11 20:48:45,487 ] 274 root - INFO - Searching Pinecone with query: How enhanced GPUs contribute to wildfire detection technologies
+[ 2026-09-11 20:48:45,607 ] 274 root - INFO - Searching Pinecone with query: Use of advanced GPU technology in detecting wildfires
+[ 2026-09-11 20:48:45,721 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:48:45,721 ] 250 root - INFO - Documents after RRF ranking: 9
+[ 2026-09-11 20:48:45,721 ] 279 root - INFO - Documents sent to cross encoder: 9
+[ 2026-09-11 20:48:47,357 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:48:47,357 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:48:49,270 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:48:49,285 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:51:18,577 ] 232 root - INFO - Retrieval started for query: why does investment in gpu affect wildfore detection
+[ 2026-09-11 20:51:18,577 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:51:18,577 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:51:19,908 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:51:19,921 ] 256 root - INFO - Original query: why does investment in gpu affect wildfore detection
+[ 2026-09-11 20:51:19,921 ] 257 root - INFO - Rewritten query: How does investment in graphics processing units (GPUs) impact wildfire detection capabilities?
+[ 2026-09-11 20:51:19,922 ] 258 root - INFO - Expanded queries: ['Effect of graphics processing unit (GPU) investment on wildfire detection', 'Impact of GPU technology funding on wildfire monitoring and detection', 'Role of GPU investment in enhancing wildfire detection systems', 'How funding GPUs influences wildfire detection accuracy and speed']
+[ 2026-09-11 20:51:19,922 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:51:19,922 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:51:19,922 ] 274 root - INFO - Searching Pinecone with query: why does investment in gpu affect wildfore detection
+[ 2026-09-11 20:51:20,175 ] 274 root - INFO - Searching Pinecone with query: How does investment in graphics processing units (GPUs) impact wildfire detection capabilities?
+[ 2026-09-11 20:51:20,373 ] 274 root - INFO - Searching Pinecone with query: Effect of graphics processing unit (GPU) investment on wildfire detection
+[ 2026-09-11 20:51:20,495 ] 274 root - INFO - Searching Pinecone with query: Impact of GPU technology funding on wildfire monitoring and detection
+[ 2026-09-11 20:51:20,592 ] 274 root - INFO - Searching Pinecone with query: Role of GPU investment in enhancing wildfire detection systems
+[ 2026-09-11 20:51:20,675 ] 274 root - INFO - Searching Pinecone with query: How funding GPUs influences wildfire detection accuracy and speed
+[ 2026-09-11 20:51:20,804 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:51:20,804 ] 250 root - INFO - Documents after RRF ranking: 12
+[ 2026-09-11 20:51:20,804 ] 279 root - INFO - Documents sent to cross encoder: 12
+[ 2026-09-11 20:51:22,832 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:51:22,833 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:51:24,222 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:51:24,233 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:55:39,070 ] 232 root - INFO - Retrieval started for query: what is the title of the paper
+[ 2026-09-11 20:55:39,070 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-11 20:55:39,071 ] 200 root - INFO - Transforming user query
+[ 2026-09-11 20:55:40,145 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:55:40,156 ] 256 root - INFO - Original query: what is the title of the paper
+[ 2026-09-11 20:55:40,157 ] 257 root - INFO - Rewritten query: What is the title of the research paper?
+[ 2026-09-11 20:55:40,157 ] 258 root - INFO - Expanded queries: ['What is the title of the academic paper?', 'What is the name of the scientific article?', 'What is the title of the published paper?', 'What is the heading of the research article?']
+[ 2026-09-11 20:55:40,157 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-11 20:55:40,157 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-11 20:55:40,157 ] 274 root - INFO - Searching Pinecone with query: what is the title of the paper
+[ 2026-09-11 20:55:40,398 ] 274 root - INFO - Searching Pinecone with query: What is the title of the research paper?
+[ 2026-09-11 20:55:40,499 ] 274 root - INFO - Searching Pinecone with query: What is the title of the academic paper?
+[ 2026-09-11 20:55:40,623 ] 274 root - INFO - Searching Pinecone with query: What is the name of the scientific article?
+[ 2026-09-11 20:55:40,709 ] 274 root - INFO - Searching Pinecone with query: What is the title of the published paper?
+[ 2026-09-11 20:55:40,861 ] 274 root - INFO - Searching Pinecone with query: What is the heading of the research article?
+[ 2026-09-11 20:55:40,963 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-11 20:55:40,963 ] 250 root - INFO - Documents after RRF ranking: 8
+[ 2026-09-11 20:55:40,963 ] 279 root - INFO - Documents sent to cross encoder: 8
+[ 2026-09-11 20:55:41,949 ] 236 root - INFO - Retrieval and reranking completed. Final documents retrieved: 5
+[ 2026-09-11 20:55:41,949 ] 267 root - INFO - Generating final answer from retrieved context
+[ 2026-09-11 20:55:42,946 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-11 20:55:42,955 ] 276 root - INFO - Final answer generated successfully
+[ 2026-09-11 20:56:32,352 ] 171 root - INFO - FastAPI RAG application shutdown started
+[ 2026-09-11 20:56:32,352 ] 175 root - INFO - FastAPI RAG application shutdown completed
