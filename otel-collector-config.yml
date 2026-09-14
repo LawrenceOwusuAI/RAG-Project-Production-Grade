@@ -1,0 +1,38 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+        # Listen for OTLP/HTTP traffic on port 4318.
+        endpoint: 0.0.0.0:4318
+processors:
+  memory_limiter:
+    check_interval: 5s
+    limit_mib: 256
+    spike_limit_mib: 64
+
+  batch:
+    timeout: 5s
+    send_batch_size: 1024
+
+exporters:
+  # PROMETHEUS EXPORTER
+  prometheus:
+    # Prometheus scrape this endpoint.
+    endpoint: 0.0.0.0:9464
+    enable_open_metrics: true
+
+  debug:
+    verbosity: basic
+
+service:
+  pipelines:
+    # METRICS ONLY
+    metrics:
+      receivers:
+        - otlp
+      processors:
+        - memory_limiter
+        - batch
+      exporters:
+        - prometheus
+        - debug

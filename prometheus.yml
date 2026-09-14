@@ -1,0 +1,10 @@
+global:
+  # Ask the Collector for new metric values every 15 seconds.
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "rag-api"
+    static_configs:
+      - targets:
+          # Docker service name of the Collector.
+          - "otel-collector:9464"
