@@ -9,14 +9,15 @@ from langchain_classic.retrievers import ContextualCompressionRetriever
 from langchain_classic.retrievers.document_compressors import CrossEncoderReranker
 from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from exception import CustomException
+from llm_gateway import create_portkey_llm
 
 
 QUERY_MODEL = "gpt-4.1-mini"
 CROSS_ENCODER_MODEL = "BAAI/bge-reranker-base"
 #Number of chunks Pinecone returns for EACH transformed query
-BASE_K = 64
+BASE_K = 4
 # Maximum number of documents sent to the cross encoder
-MAX_CANDIDATES = 20
+MAX_CANDIDATES = 5
 # Final number of chunks returned after cross-encoder reranking
 FINAL_TOP_N = 4
 # Reciprocal Rank Fusion constant
@@ -42,7 +43,8 @@ class QueryTransformation(BaseModel):
 class QueryTransformer:
     def __init__(self):
         logging.info( "Creating query transformation model")
-        llm = ChatOpenAI(model=QUERY_MODEL, temperature=0)
+        llm = create_portkey_llm(model=QUERY_MODEL,component="query-transformer")
+        #llm = ChatOpenAI(model=QUERY_MODEL, temperature=0)
         structured_llm = llm.with_structured_output(QueryTransformation)
         self.prompt = ChatPromptTemplate.from_messages(
                 [(

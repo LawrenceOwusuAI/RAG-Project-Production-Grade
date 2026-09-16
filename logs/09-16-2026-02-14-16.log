@@ -1,0 +1,186 @@
+[ 2026-09-16 02:14:33,133 ] 156 root - INFO - FastAPI RAG application startup started
+[ 2026-09-16 02:14:33,142 ] 164 root - INFO - Loading embedding model
+[ 2026-09-16 02:14:33,285 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,319 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,348 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,392 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,417 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,424 ] 1080 sentence_transformers.base.model - INFO - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+[ 2026-09-16 02:14:33,457 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,457 ] 965 huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ 2026-09-16 02:14:33,476 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,507 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,533 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,586 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,604 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,659 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,686 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:33,749 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:33,786 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:33,805 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,055 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:34,093 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:34,134 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:34,177 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:34,212 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:34,237 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,281 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:34,300 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,338 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:34,357 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,396 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:34,416 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,472 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:34,508 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,693 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:34,721 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,776 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:34,819 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:34,842 ] 180 root - INFO - Embedding model loaded successfully
+[ 2026-09-16 02:14:34,843 ] 181 root - INFO - Connecting to Pinecone
+[ 2026-09-16 02:14:35,297 ] 199 root - INFO - Connected to Pinecone index: rag-project
+[ 2026-09-16 02:14:35,300 ] 210 root - INFO - Connected LangChain to Pinecone vector store
+[ 2026-09-16 02:14:35,301 ] 215 root - INFO - Creating advanced retriever
+[ 2026-09-16 02:14:35,305 ] 300 root - INFO - Creating advanced retrieval pipeline
+[ 2026-09-16 02:14:35,306 ] 207 root - INFO - Creating Pinecone base retriever
+[ 2026-09-16 02:14:35,308 ] 45 root - INFO - Creating query transformation model
+[ 2026-09-16 02:14:36,273 ] 178 root - INFO - Portkey LLM Gateway initialized. model=gpt-4.1-mini component=query-transformer
+[ 2026-09-16 02:14:36,275 ] 294 root - INFO - Creating cross-encoder reranker
+[ 2026-09-16 02:14:36,275 ] 285 root - INFO - Loading cross-encoder model: BAAI/bge-reranker-base
+[ 2026-09-16 02:14:36,310 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:36,328 ] 1069 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-09-16 02:14:36,365 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:36,404 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:36,424 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:36,489 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:36,520 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:36,539 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:36,724 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:36,758 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:36,793 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:36,834 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:36,875 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:36,898 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:36,962 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:36,983 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:37,028 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:37,047 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:37,087 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:14:37,110 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:37,161 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:14:37,202 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:39,492 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-16 02:14:39,508 ] 314 root - INFO - Advanced retriever created successfully
+[ 2026-09-16 02:14:39,508 ] 229 root - INFO - Advanced retriever created successfully
+[ 2026-09-16 02:14:39,509 ] 238 root - INFO - Loading answer generation model
+[ 2026-09-16 02:14:39,510 ] 178 root - INFO - Portkey LLM Gateway initialized. model=gpt-4.1-mini component=answer-generator
+[ 2026-09-16 02:14:39,510 ] 259 root - INFO - Answer generation model loaded successfully
+[ 2026-09-16 02:14:39,511 ] 295 root - INFO - FastAPI RAG application startup completed successfully
+[ 2026-09-16 02:17:41,991 ] 449 root - INFO - RAG query received. Query length: 50
+[ 2026-09-16 02:17:41,992 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 02:17:42,007 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 02:17:42,007 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 02:17:42,623 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+[ 2026-09-16 02:17:42,790 ] 639 root - ERROR - RAG query processing failed
+Traceback (most recent call last):
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1843, in _generate
+    self.root_client.chat.completions.with_raw_response.parse(**payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_legacy_response.py", line 369, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 193, in parse
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream=False,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'status': 'failure', 'error': {'code': 'inline_config_blocked', 'message': "Inline config is not allowed when block_inline_config is enabled. Reference a saved config by its 'pc-...' slug instead.", 'field': 'x-portkey-config'}, 'message': "Inline config is not allowed when block_inline_config is enabled. Reference a saved config by its 'pc-...' slug instead."}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\app1.py", line 474, in query_rag
+    app.state.retriever.invoke(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        query
+        ^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+        input, run_manager=run_manager, **kwargs_
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_classic\retrievers\contextual_compression.py", line 34, in _get_relevant_documents
+    docs = self.base_retriever.invoke(
+        query,
+        config={"callbacks": run_manager.get_child()},
+        **kwargs,
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+        input, run_manager=run_manager, **kwargs_
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\reranker.py", line 257, in _get_relevant_documents
+    transformation = self.query_transformer.transform(query)
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\reranker.py", line 203, in transform
+    transformation = self.chain.invoke({"query": query})
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3456, in invoke
+    input_ = context.run(step.invoke, input_, config)
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6014, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 488, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1883, in _generate
+    _handle_openai_bad_request(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 642, in _handle_openai_bad_request
+    raise OpenAIInvalidRequestError(
+        message=e.message, response=e.response, body=e.body
+    ) from e
+langchain_openai.chat_models.base.OpenAIInvalidRequestError: Error code: 400 - {'status': 'failure', 'error': {'code': 'inline_config_blocked', 'message': "Inline config is not allowed when block_inline_config is enabled. Reference a saved config by its 'pc-...' slug instead.", 'field': 'x-portkey-config'}, 'message': "Inline config is not allowed when block_inline_config is enabled. Reference a saved config by its 'pc-...' slug instead."}
+[ 2026-09-16 02:39:55,980 ] 314 root - INFO - FastAPI RAG application shutdown started
+[ 2026-09-16 02:39:55,985 ] 326 root - INFO - FastAPI RAG application shutdown completed

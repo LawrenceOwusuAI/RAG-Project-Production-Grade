@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 import os
 import time
-
+from llm_gateway import create_portkey_llm
 from exception import CustomException
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -11,42 +11,14 @@ from langchain_openai import ChatOpenAI
 from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 from pydantic import BaseModel, Field
-
 from chunking import PDF_PATH
 from logger import logging
 from reranker import create_advanced_retriever
-
 import logfire
-
-
-# =========================================================
-# LOAD ENVIRONMENT VARIABLES
-# =========================================================
-
-# This must happen before logfire.configure()
-# so LOGFIRE_TOKEN and OTEL variables are available.
-
-load_dotenv(
-    override=True
-)
-
-
-# =========================================================
-# APPLICATION CONSTANTS
-# =========================================================
-
-EMBEDDING_MODEL_NAME = (
-    "sentence-transformers/all-MiniLM-L6-v2"
-)
-
+load_dotenv(override=True)
+EMBEDDING_MODEL_NAME = ("sentence-transformers/all-MiniLM-L6-v2")
 INDEX_NAME = "rag-project"
-
 NAMESPACE = PDF_PATH.stem
-
-
-# =========================================================
-# CONFIGURE LOGFIRE
-# =========================================================
 
 logfire.configure(
     service_name="rag-api",
@@ -54,19 +26,11 @@ logfire.configure(
     send_to_logfire=True,
 )
 
-
-# =========================================================
-# METRICS
-# =========================================================
-
-
-# Total number of /query requests received.
 request_counter = logfire.metric_counter(
     "rag.requests",
     unit="1",
     description="Total number of RAG requests",
 )
-
 
 # Total failed RAG requests.
 error_counter = logfire.metric_counter(
@@ -75,14 +39,12 @@ error_counter = logfire.metric_counter(
     description="Total number of failed RAG requests",
 )
 
-
 # Number of requests currently being processed.
 active_requests = logfire.metric_up_down_counter(
     "rag.active_requests",
     unit="1",
     description="Number of active RAG requests",
 )
-
 
 # Total end-to-end request duration.
 request_duration = logfire.metric_histogram(
@@ -91,14 +53,12 @@ request_duration = logfire.metric_histogram(
     description="End-to-end RAG request duration",
 )
 
-
 # Retrieval + reranking duration.
 retrieval_duration = logfire.metric_histogram(
     "rag.retrieval.duration",
     unit="ms",
     description="Retrieval and reranking duration",
 )
-
 
 # Final answer generation duration.
 llm_duration = logfire.metric_histogram(
@@ -107,7 +67,6 @@ llm_duration = logfire.metric_histogram(
     description="LLM answer generation duration",
 )
 
-
 # Number of documents returned by final retriever.
 documents_retrieved = logfire.metric_histogram(
     "rag.documents.retrieved",
@@ -115,33 +74,14 @@ documents_retrieved = logfire.metric_histogram(
     description="Number of documents returned after reranking",
 )
 
-
-# =========================================================
-# REQUEST / RESPONSE SCHEMAS
-# =========================================================
-
-
 class QueryRequest(BaseModel):
-
-    query: str = Field(
-        min_length=1
-    )
-
+    query: str = Field(min_length=1)
 
 class QueryResponse(BaseModel):
-
     query: str
-
     answer: str
 
-
-# =========================================================
-# ANSWER GENERATION PROMPT
-# =========================================================
-
-
 def create_answer_prompt():
-
     return ChatPromptTemplate.from_messages(
         [
             (
@@ -199,15 +139,9 @@ def create_answer_prompt():
                 "human",
                 """
                 USER QUESTION:
-
                 {query}
-
-
                 RETRIEVED DOCUMENT CONTEXT:
-
                 {context}
-
-
                 Using only the retrieved context above, provide a
                 clear and coherent answer with source and page
                 citations.
@@ -216,62 +150,23 @@ def create_answer_prompt():
         ]
     )
 
-
-# =========================================================
 # FASTAPI LIFESPAN
-# =========================================================
-
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-
-    logging.info(
-        "FastAPI RAG application startup started"
-    )
-
-    logfire.info(
-        "RAG application startup started"
-    )
-
-    # -----------------------------------------------------
-    # LOAD API KEYS
-    # -----------------------------------------------------
-
-    pinecone_api_key = os.getenv(
-        "PINECONE_API_KEY"
-    )
-
+    logging.info( "FastAPI RAG application startup started")
+    logfire.info("RAG application startup started")
+    pinecone_api_key = os.getenv( "PINECONE_API_KEY")
     if not pinecone_api_key:
-
-        raise ValueError(
-            "PINECONE_API_KEY was not found."
-        )
-
-
-    openai_api_key = os.getenv(
-        "OPENAI_API_KEY"
-    )
-
+        raise ValueError( "PINECONE_API_KEY was not found.")
+    openai_api_key = os.getenv("OPENAI_API_KEY")
     if not openai_api_key:
-
-        raise ValueError(
-            "OPENAI_API_KEY was not found."
-        )
-
-
-    # -----------------------------------------------------
-    # EMBEDDING MODEL
-    # -----------------------------------------------------
-
-    logging.info(
-        "Loading embedding model"
-    )
+        raise ValueError("OPENAI_API_KEY was not found.")
+    logging.info("Loading embedding model")
 
     with logfire.span(
         "rag.startup.load_embedding_model",
         model=EMBEDDING_MODEL_NAME,
     ):
-
         embeddings = HuggingFaceEmbeddings(
             model_name=EMBEDDING_MODEL_NAME,
             model_kwargs={
@@ -282,27 +177,14 @@ async def lifespan(app: FastAPI):
             },
         )
 
-
-    logging.info(
-        "Embedding model loaded successfully"
-    )
-
-
-    # -----------------------------------------------------
-    # PINECONE
-    # -----------------------------------------------------
-
-    logging.info(
-        "Connecting to Pinecone"
-    )
-
+    logging.info("Embedding model loaded successfully")
+    logging.info("Connecting to Pinecone")
 
     with logfire.span(
         "rag.startup.connect_pinecone",
         index_name=INDEX_NAME,
         namespace=NAMESPACE,
     ):
-
         pc = Pinecone(
             api_key=pinecone_api_key
         )
@@ -325,16 +207,10 @@ async def lifespan(app: FastAPI):
         embedding=embeddings,
         namespace=NAMESPACE,
     )
-
-
     logging.info(
         "Connected LangChain to Pinecone vector store"
     )
 
-
-    # -----------------------------------------------------
-    # RETRIEVER
-    # -----------------------------------------------------
 
     logging.info(
         "Creating advanced retriever"
@@ -368,11 +244,15 @@ async def lifespan(app: FastAPI):
         "rag.startup.create_llm",
         model="gpt-4.1-mini",
     ):
-
-        llm = ChatOpenAI(
+        llm = create_portkey_llm(
             model="gpt-4.1-mini",
-            temperature=0,
+            component="answer-generator"
         )
+        # llm = ChatOpenAI(
+        #     model="gpt-4.1-mini",
+        #     temperature=0,
+        # )
+
 
 
     logging.info(
@@ -450,24 +330,12 @@ async def lifespan(app: FastAPI):
         "RAG application shutdown completed"
     )
 
-
-# =========================================================
-# CREATE FASTAPI APPLICATION
-# =========================================================
-
-
 app = FastAPI(
     title="RAG API",
     description="FastAPI service for the RAG application",
     version="1.0.0",
     lifespan=lifespan,
 )
-
-
-# =========================================================
-# SAFE FASTAPI REQUEST INSTRUMENTATION
-# =========================================================
-
 
 def request_attributes_mapper(
     request,
@@ -496,12 +364,7 @@ logfire.instrument_fastapi(
     request_attributes_mapper=request_attributes_mapper,
 )
 
-
-# =========================================================
 # ROOT ENDPOINT
-# =========================================================
-
-
 @app.get("/")
 def root():
 
@@ -512,11 +375,7 @@ def root():
         "query_endpoint": "/query",
     }
 
-
-# =========================================================
 # HEALTH ENDPOINT
-# =========================================================
-
 
 @app.get("/health")
 def health():
@@ -536,12 +395,7 @@ def health():
         "embedding_model": EMBEDDING_MODEL_NAME,
     }
 
-
-# =========================================================
 # QUERY ENDPOINT
-# =========================================================
-
-
 @app.post(
     "/query",
     response_model=QueryResponse,
@@ -599,9 +453,7 @@ def query_rag(
 
     try:
 
-        # =================================================
         # RETRIEVAL + RERANKING
-        # =================================================
 
         retrieval_start = time.perf_counter()
 
@@ -805,9 +657,9 @@ def query_rag(
 
     finally:
 
-        # -------------------------------------------------
+    
         # REQUEST FINISHED
-        # -------------------------------------------------
+        
 
         active_requests.add(-1)
 

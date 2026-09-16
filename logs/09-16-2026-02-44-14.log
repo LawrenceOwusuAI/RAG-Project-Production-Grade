@@ -1,0 +1,406 @@
+[ 2026-09-16 02:44:30,088 ] 156 root - INFO - FastAPI RAG application startup started
+[ 2026-09-16 02:44:30,098 ] 164 root - INFO - Loading embedding model
+[ 2026-09-16 02:44:30,234 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,236 ] 965 huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ 2026-09-16 02:44:30,256 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,290 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,309 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,310 ] 1080 sentence_transformers.base.model - INFO - Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+[ 2026-09-16 02:44:30,342 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,361 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22fd1b291129c607e5d49799f87cb219b27f98acdf%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,394 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,414 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%2244af2e3b0fa3a0b6239e48422972bf755f28fde0%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,460 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,479 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22952a9b81c0bfd99800fabf352f69c7ccd46c5e43%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,515 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,538 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%2259d594003bf59880a884c574bf88ef7555bb0202%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,578 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:30,610 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:30,637 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:30,830 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:30,873 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:30,908 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:30,943 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:30,981 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:31,001 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,041 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:31,060 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,096 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:31,117 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Fconfig.json=&etag=%2272b987fd805cfa2b58c4c8c952b274a11bfd5a00%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,163 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:31,234 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22c79f2b6a0cea6f4b564fed1938984bace9d30ff0%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,310 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:31,351 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,446 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:31,465 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fall-MiniLM-L6-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,500 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/2_Normalize/config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:31,537 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:31,541 ] 180 root - INFO - Embedding model loaded successfully
+[ 2026-09-16 02:44:31,541 ] 181 root - INFO - Connecting to Pinecone
+[ 2026-09-16 02:44:31,944 ] 199 root - INFO - Connected to Pinecone index: rag-project
+[ 2026-09-16 02:44:31,947 ] 210 root - INFO - Connected LangChain to Pinecone vector store
+[ 2026-09-16 02:44:31,947 ] 215 root - INFO - Creating advanced retriever
+[ 2026-09-16 02:44:31,948 ] 300 root - INFO - Creating advanced retrieval pipeline
+[ 2026-09-16 02:44:31,948 ] 207 root - INFO - Creating Pinecone base retriever
+[ 2026-09-16 02:44:31,949 ] 45 root - INFO - Creating query transformation model
+[ 2026-09-16 02:44:32,936 ] 182 root - INFO - Portkey LLM Gateway initialized. model=gpt-4.1-mini component=query-transformer config=pc-rag-fi-74fe4c
+[ 2026-09-16 02:44:32,937 ] 294 root - INFO - Creating cross-encoder reranker
+[ 2026-09-16 02:44:32,938 ] 285 root - INFO - Loading cross-encoder model: BAAI/bge-reranker-base
+[ 2026-09-16 02:44:32,976 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:32,976 ] 1069 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-09-16 02:44:33,013 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,047 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:33,069 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,110 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:33,143 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:33,162 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,332 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:33,365 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:33,400 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:33,434 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:33,467 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:33,486 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,521 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:33,541 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,579 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:33,598 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Fconfig.json=&etag=%22ff248a5f7d76e27b10778b3c593c9fba1df4c448%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,638 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-09-16 02:44:33,657 ] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json?%2FBAAI%2Fbge-reranker-base%2Fresolve%2Fmain%2Ftokenizer_config.json=&etag=%22059214673d9d6d2ee319411e2ffec8c024b816d5%22 "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:33,709 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-09-16 02:44:33,744 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:36,078 ] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-09-16 02:44:36,097 ] 314 root - INFO - Advanced retriever created successfully
+[ 2026-09-16 02:44:36,098 ] 229 root - INFO - Advanced retriever created successfully
+[ 2026-09-16 02:44:36,098 ] 238 root - INFO - Loading answer generation model
+[ 2026-09-16 02:44:36,100 ] 182 root - INFO - Portkey LLM Gateway initialized. model=gpt-4.1-mini component=answer-generator config=pc-rag-fi-74fe4c
+[ 2026-09-16 02:44:36,100 ] 259 root - INFO - Answer generation model loaded successfully
+[ 2026-09-16 02:44:36,100 ] 295 root - INFO - FastAPI RAG application startup completed successfully
+[ 2026-09-16 02:46:20,206 ] 449 root - INFO - RAG query received. Query length: 50
+[ 2026-09-16 02:46:20,207 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 02:46:20,212 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 02:46:20,212 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 02:46:23,773 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 02:46:23,824 ] 258 root - INFO - Original query: why is wildfire detection important for government
+[ 2026-09-16 02:46:23,824 ] 259 root - INFO - Rewritten query: Why is wildfire detection critical for government agencies?
+[ 2026-09-16 02:46:23,824 ] 260 root - INFO - Expanded queries: ['Importance of wildfire detection for government authorities', 'Why governments prioritize wildfire detection', 'Role of wildfire detection in government disaster management', 'Significance of wildfire monitoring for public sector agencies']
+[ 2026-09-16 02:46:23,825 ] 261 root - INFO - Decomposed queries: []
+[ 2026-09-16 02:46:23,825 ] 273 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-16 02:46:23,825 ] 276 root - INFO - Searching Pinecone with query: why is wildfire detection important for government
+[ 2026-09-16 02:46:24,247 ] 276 root - INFO - Searching Pinecone with query: Why is wildfire detection critical for government agencies?
+[ 2026-09-16 02:46:24,303 ] 276 root - INFO - Searching Pinecone with query: Importance of wildfire detection for government authorities
+[ 2026-09-16 02:46:24,439 ] 276 root - INFO - Searching Pinecone with query: Why governments prioritize wildfire detection
+[ 2026-09-16 02:46:24,542 ] 276 root - INFO - Searching Pinecone with query: Role of wildfire detection in government disaster management
+[ 2026-09-16 02:46:24,624 ] 276 root - INFO - Searching Pinecone with query: Significance of wildfire monitoring for public sector agencies
+[ 2026-09-16 02:46:24,712 ] 236 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-16 02:46:24,717 ] 252 root - INFO - Documents after RRF ranking: 6
+[ 2026-09-16 02:46:24,717 ] 281 root - INFO - Documents sent to cross encoder: 5
+[ 2026-09-16 02:46:26,797 ] 491 root - INFO - Retrieval and reranking completed. Final documents retrieved: 4
+[ 2026-09-16 02:46:26,799 ] 575 root - INFO - Generating final answer from retrieved context
+[ 2026-09-16 02:46:29,950 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 02:46:29,962 ] 609 root - INFO - Final answer generated successfully
+[ 2026-09-16 02:55:29,759 ] 449 root - INFO - RAG query received. Query length: 50
+[ 2026-09-16 02:55:29,760 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 02:55:29,760 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 02:55:29,760 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 02:55:30,262 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 02:55:30,269 ] 258 root - INFO - Original query: why is wildfire detection important for government
+[ 2026-09-16 02:55:30,269 ] 259 root - INFO - Rewritten query: Why is wildfire detection critical for government agencies?
+[ 2026-09-16 02:55:30,270 ] 260 root - INFO - Expanded queries: ['Importance of wildfire detection for government authorities', 'Why governments prioritize wildfire detection', 'Role of wildfire detection in government disaster management', 'Significance of wildfire monitoring for public sector agencies']
+[ 2026-09-16 02:55:30,271 ] 261 root - INFO - Decomposed queries: []
+[ 2026-09-16 02:55:30,271 ] 273 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-16 02:55:30,272 ] 276 root - INFO - Searching Pinecone with query: why is wildfire detection important for government
+[ 2026-09-16 02:55:30,513 ] 276 root - INFO - Searching Pinecone with query: Why is wildfire detection critical for government agencies?
+[ 2026-09-16 02:55:30,610 ] 276 root - INFO - Searching Pinecone with query: Importance of wildfire detection for government authorities
+[ 2026-09-16 02:55:30,687 ] 276 root - INFO - Searching Pinecone with query: Why governments prioritize wildfire detection
+[ 2026-09-16 02:55:30,763 ] 276 root - INFO - Searching Pinecone with query: Role of wildfire detection in government disaster management
+[ 2026-09-16 02:55:30,839 ] 276 root - INFO - Searching Pinecone with query: Significance of wildfire monitoring for public sector agencies
+[ 2026-09-16 02:55:30,912 ] 236 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-16 02:55:30,912 ] 252 root - INFO - Documents after RRF ranking: 6
+[ 2026-09-16 02:55:30,912 ] 281 root - INFO - Documents sent to cross encoder: 5
+[ 2026-09-16 02:55:31,833 ] 491 root - INFO - Retrieval and reranking completed. Final documents retrieved: 4
+[ 2026-09-16 02:55:31,834 ] 575 root - INFO - Generating final answer from retrieved context
+[ 2026-09-16 02:55:32,057 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 02:55:32,060 ] 609 root - INFO - Final answer generated successfully
+[ 2026-09-16 03:01:03,454 ] 449 root - INFO - RAG query received. Query length: 25
+[ 2026-09-16 03:01:03,455 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 03:01:03,455 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 03:01:03,455 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 03:01:06,240 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 03:01:06,247 ] 258 root - INFO - Original query: what is transfer learning
+[ 2026-09-16 03:01:06,248 ] 259 root - INFO - Rewritten query: What is transfer learning in machine learning?
+[ 2026-09-16 03:01:06,249 ] 260 root - INFO - Expanded queries: ['Definition of transfer learning in artificial intelligence', 'Explanation of transfer learning in machine learning', 'Overview of knowledge transfer techniques in AI', 'Concept of transfer learning for model adaptation']
+[ 2026-09-16 03:01:06,249 ] 261 root - INFO - Decomposed queries: []
+[ 2026-09-16 03:01:06,250 ] 273 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-16 03:01:06,250 ] 276 root - INFO - Searching Pinecone with query: what is transfer learning
+[ 2026-09-16 03:01:06,498 ] 276 root - INFO - Searching Pinecone with query: What is transfer learning in machine learning?
+[ 2026-09-16 03:01:06,575 ] 276 root - INFO - Searching Pinecone with query: Definition of transfer learning in artificial intelligence
+[ 2026-09-16 03:01:06,664 ] 276 root - INFO - Searching Pinecone with query: Explanation of transfer learning in machine learning
+[ 2026-09-16 03:01:06,753 ] 276 root - INFO - Searching Pinecone with query: Overview of knowledge transfer techniques in AI
+[ 2026-09-16 03:01:06,827 ] 276 root - INFO - Searching Pinecone with query: Concept of transfer learning for model adaptation
+[ 2026-09-16 03:01:06,915 ] 236 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-16 03:01:06,915 ] 252 root - INFO - Documents after RRF ranking: 5
+[ 2026-09-16 03:01:06,915 ] 281 root - INFO - Documents sent to cross encoder: 5
+[ 2026-09-16 03:01:07,892 ] 491 root - INFO - Retrieval and reranking completed. Final documents retrieved: 4
+[ 2026-09-16 03:01:07,894 ] 575 root - INFO - Generating final answer from retrieved context
+[ 2026-09-16 03:01:10,523 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 03:01:10,528 ] 609 root - INFO - Final answer generated successfully
+[ 2026-09-16 03:04:20,336 ] 449 root - INFO - RAG query received. Query length: 25
+[ 2026-09-16 03:04:20,338 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 03:04:20,338 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 03:04:20,339 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 03:04:20,992 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 03:04:20,998 ] 258 root - INFO - Original query: what is transfer learning
+[ 2026-09-16 03:04:20,999 ] 259 root - INFO - Rewritten query: What is transfer learning in machine learning?
+[ 2026-09-16 03:04:21,000 ] 260 root - INFO - Expanded queries: ['Definition of transfer learning in artificial intelligence', 'Explanation of transfer learning in machine learning', 'Overview of knowledge transfer techniques in AI', 'Concept of transfer learning for model adaptation']
+[ 2026-09-16 03:04:21,001 ] 261 root - INFO - Decomposed queries: []
+[ 2026-09-16 03:04:21,001 ] 273 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-16 03:04:21,002 ] 276 root - INFO - Searching Pinecone with query: what is transfer learning
+[ 2026-09-16 03:04:21,207 ] 276 root - INFO - Searching Pinecone with query: What is transfer learning in machine learning?
+[ 2026-09-16 03:04:21,282 ] 276 root - INFO - Searching Pinecone with query: Definition of transfer learning in artificial intelligence
+[ 2026-09-16 03:04:21,369 ] 276 root - INFO - Searching Pinecone with query: Explanation of transfer learning in machine learning
+[ 2026-09-16 03:04:21,444 ] 276 root - INFO - Searching Pinecone with query: Overview of knowledge transfer techniques in AI
+[ 2026-09-16 03:04:21,486 ] 276 root - INFO - Searching Pinecone with query: Concept of transfer learning for model adaptation
+[ 2026-09-16 03:04:21,526 ] 236 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-16 03:04:21,526 ] 252 root - INFO - Documents after RRF ranking: 5
+[ 2026-09-16 03:04:21,527 ] 281 root - INFO - Documents sent to cross encoder: 5
+[ 2026-09-16 03:04:22,436 ] 491 root - INFO - Retrieval and reranking completed. Final documents retrieved: 4
+[ 2026-09-16 03:04:22,437 ] 575 root - INFO - Generating final answer from retrieved context
+[ 2026-09-16 03:04:22,624 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 03:04:22,625 ] 609 root - INFO - Final answer generated successfully
+[ 2026-09-16 03:04:41,720 ] 449 root - INFO - RAG query received. Query length: 25
+[ 2026-09-16 03:04:41,721 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 03:04:41,721 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 03:04:41,721 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 03:04:41,867 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 03:04:41,873 ] 258 root - INFO - Original query: what is transfer learning
+[ 2026-09-16 03:04:41,874 ] 259 root - INFO - Rewritten query: What is transfer learning in machine learning?
+[ 2026-09-16 03:04:41,875 ] 260 root - INFO - Expanded queries: ['Definition of transfer learning in artificial intelligence', 'Explanation of transfer learning in machine learning', 'Overview of knowledge transfer techniques in AI', 'Concept of transfer learning for model adaptation']
+[ 2026-09-16 03:04:41,875 ] 261 root - INFO - Decomposed queries: []
+[ 2026-09-16 03:04:41,876 ] 273 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-16 03:04:41,877 ] 276 root - INFO - Searching Pinecone with query: what is transfer learning
+[ 2026-09-16 03:04:41,976 ] 276 root - INFO - Searching Pinecone with query: What is transfer learning in machine learning?
+[ 2026-09-16 03:04:42,049 ] 276 root - INFO - Searching Pinecone with query: Definition of transfer learning in artificial intelligence
+[ 2026-09-16 03:04:42,087 ] 276 root - INFO - Searching Pinecone with query: Explanation of transfer learning in machine learning
+[ 2026-09-16 03:04:42,126 ] 276 root - INFO - Searching Pinecone with query: Overview of knowledge transfer techniques in AI
+[ 2026-09-16 03:04:42,209 ] 276 root - INFO - Searching Pinecone with query: Concept of transfer learning for model adaptation
+[ 2026-09-16 03:04:42,246 ] 236 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-16 03:04:42,247 ] 252 root - INFO - Documents after RRF ranking: 5
+[ 2026-09-16 03:04:42,247 ] 281 root - INFO - Documents sent to cross encoder: 5
+[ 2026-09-16 03:04:43,167 ] 491 root - INFO - Retrieval and reranking completed. Final documents retrieved: 4
+[ 2026-09-16 03:04:43,168 ] 575 root - INFO - Generating final answer from retrieved context
+[ 2026-09-16 03:04:43,221 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-16 03:04:43,222 ] 609 root - INFO - Final answer generated successfully
+[ 2026-09-16 03:08:47,522 ] 449 root - INFO - RAG query received. Query length: 35
+[ 2026-09-16 03:08:47,523 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 03:08:47,524 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 03:08:47,524 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 03:08:48,711 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+[ 2026-09-16 03:08:48,741 ] 639 root - ERROR - RAG query processing failed
+Traceback (most recent call last):
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1843, in _generate
+    self.root_client.chat.completions.with_raw_response.parse(**payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_legacy_response.py", line 369, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 193, in parse
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream=False,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\app1.py", line 474, in query_rag
+    app.state.retriever.invoke(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        query
+        ^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+        input, run_manager=run_manager, **kwargs_
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_classic\retrievers\contextual_compression.py", line 34, in _get_relevant_documents
+    docs = self.base_retriever.invoke(
+        query,
+        config={"callbacks": run_manager.get_child()},
+        **kwargs,
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+        input, run_manager=run_manager, **kwargs_
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\reranker.py", line 257, in _get_relevant_documents
+    transformation = self.query_transformer.transform(query)
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\reranker.py", line 203, in transform
+    transformation = self.chain.invoke({"query": query})
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3456, in invoke
+    input_ = context.run(step.invoke, input_, config)
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6014, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 488, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1883, in _generate
+    _handle_openai_bad_request(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 642, in _handle_openai_bad_request
+    raise OpenAIInvalidRequestError(
+        message=e.message, response=e.response, body=e.body
+    ) from e
+langchain_openai.chat_models.base.OpenAIInvalidRequestError: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+[ 2026-09-16 03:09:34,506 ] 449 root - INFO - RAG query received. Query length: 35
+[ 2026-09-16 03:09:34,507 ] 468 root - INFO - Retrieval and reranking started
+[ 2026-09-16 03:09:34,508 ] 256 root - INFO - Running transformed-query retrieval
+[ 2026-09-16 03:09:34,508 ] 202 root - INFO - Transforming user query
+[ 2026-09-16 03:09:34,923 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+[ 2026-09-16 03:09:34,931 ] 639 root - ERROR - RAG query processing failed
+Traceback (most recent call last):
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1843, in _generate
+    self.root_client.chat.completions.with_raw_response.parse(**payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_legacy_response.py", line 369, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 193, in parse
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream=False,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\openai\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\app1.py", line 474, in query_rag
+    app.state.retriever.invoke(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        query
+        ^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+        input, run_manager=run_manager, **kwargs_
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_classic\retrievers\contextual_compression.py", line 34, in _get_relevant_documents
+    docs = self.base_retriever.invoke(
+        query,
+        config={"callbacks": run_manager.get_child()},
+        **kwargs,
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+        input, run_manager=run_manager, **kwargs_
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\reranker.py", line 257, in _get_relevant_documents
+    transformation = self.query_transformer.transform(query)
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\reranker.py", line 203, in transform
+    transformation = self.chain.invoke({"query": query})
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3456, in invoke
+    input_ = context.run(step.invoke, input_, config)
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 6014, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 488, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 1883, in _generate
+    _handle_openai_bad_request(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\DELL_5411_L56AAJ9\Desktop\ALL-FOLDERS\RAG_POJECT_ADVANCED\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 642, in _handle_openai_bad_request
+    raise OpenAIInvalidRequestError(
+        message=e.message, response=e.response, body=e.body
+    ) from e
+langchain_openai.chat_models.base.OpenAIInvalidRequestError: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+[ 2026-09-16 03:14:04,255 ] 314 root - INFO - FastAPI RAG application shutdown started
+[ 2026-09-16 03:14:04,257 ] 326 root - INFO - FastAPI RAG application shutdown completed

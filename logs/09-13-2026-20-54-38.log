@@ -142,3 +142,28 @@
 [ 2026-09-13 21:09:03,014 ] 722 root - INFO - Generating final answer from retrieved context
 [ 2026-09-13 21:09:04,830 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 [ 2026-09-13 21:09:04,833 ] 756 root - INFO - Final answer generated successfully
+[ 2026-09-13 22:15:29,786 ] 594 root - INFO - RAG query received. Query length: 25
+[ 2026-09-13 22:15:29,788 ] 615 root - INFO - Retrieval and reranking started
+[ 2026-09-13 22:15:29,790 ] 254 root - INFO - Running transformed-query retrieval
+[ 2026-09-13 22:15:29,790 ] 200 root - INFO - Transforming user query
+[ 2026-09-13 22:15:31,954 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-13 22:15:31,960 ] 256 root - INFO - Original query: what is transfer learning
+[ 2026-09-13 22:15:31,960 ] 257 root - INFO - Rewritten query: What is transfer learning in machine learning?
+[ 2026-09-13 22:15:31,960 ] 258 root - INFO - Expanded queries: ['Definition of transfer learning in artificial intelligence', 'Explanation of transfer learning in machine learning', 'Overview of knowledge transfer techniques in AI', 'Concept of transfer learning for model adaptation']
+[ 2026-09-13 22:15:31,961 ] 259 root - INFO - Decomposed queries: []
+[ 2026-09-13 22:15:31,961 ] 271 root - INFO - Total unique retrieval queries: 6
+[ 2026-09-13 22:15:31,961 ] 274 root - INFO - Searching Pinecone with query: what is transfer learning
+[ 2026-09-13 22:15:32,457 ] 274 root - INFO - Searching Pinecone with query: What is transfer learning in machine learning?
+[ 2026-09-13 22:15:32,637 ] 274 root - INFO - Searching Pinecone with query: Definition of transfer learning in artificial intelligence
+[ 2026-09-13 22:15:32,803 ] 274 root - INFO - Searching Pinecone with query: Explanation of transfer learning in machine learning
+[ 2026-09-13 22:15:32,865 ] 274 root - INFO - Searching Pinecone with query: Overview of knowledge transfer techniques in AI
+[ 2026-09-13 22:15:32,976 ] 274 root - INFO - Searching Pinecone with query: Concept of transfer learning for model adaptation
+[ 2026-09-13 22:15:33,102 ] 234 root - INFO - Applying Reciprocal Rank Fusion
+[ 2026-09-13 22:15:33,102 ] 250 root - INFO - Documents after RRF ranking: 69
+[ 2026-09-13 22:15:33,103 ] 279 root - INFO - Documents sent to cross encoder: 20
+[ 2026-09-13 22:15:37,744 ] 638 root - INFO - Retrieval and reranking completed. Final documents retrieved: 4
+[ 2026-09-13 22:15:37,745 ] 722 root - INFO - Generating final answer from retrieved context
+[ 2026-09-13 22:15:39,682 ] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-09-13 22:15:39,684 ] 756 root - INFO - Final answer generated successfully
+[ 2026-09-13 22:18:10,718 ] 433 root - INFO - FastAPI RAG application shutdown started
+[ 2026-09-13 22:18:10,724 ] 445 root - INFO - FastAPI RAG application shutdown completed
